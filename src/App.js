@@ -84,7 +84,8 @@ const App = () => {
       const provider = getProvider();
       const program = new Program(idl, programID, provider);
       const account = await program.account.baseAccount.fetch(baseAccount.publicKey);
-      setWishList(account?.gifList?.map( ({ gifLink }) => gifLink));
+      console.log(account)
+      setWishList(account?.wishList?.map( ({ wish }) => wish));
 
     } catch (error) {
       console.log("Error in getWishList: ", error)
@@ -153,7 +154,7 @@ const App = () => {
       const provider = getProvider();
       const program = new Program(idl, programID, provider);
 
-      await program.rpc.addGif(inputValue, {
+      await program.rpc.addWish(inputValue, {
         accounts: {
           baseAccount: baseAccount.publicKey,
           user: provider.wallet.publicKey,
@@ -180,7 +181,7 @@ const App = () => {
    */
   const addWish = (wish) => {
     sendWishToSolana(wish);
-    setWishList([wish, ...wishList]);
+    //setWishList([wish, ...wishList]);
   };
 
   const renderNotConnectedContainer = (

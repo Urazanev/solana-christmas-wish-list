@@ -24,7 +24,7 @@
       "args": []
     },
     {
-      "name": "addGif",
+      "name": "addWish",
       "accounts": [
         {
           "name": "baseAccount",
@@ -39,7 +39,7 @@
       ],
       "args": [
         {
-          "name": "gifLink",
+          "name": "wish",
           "type": "string"
         }
       ]
@@ -52,11 +52,11 @@
         "kind": "struct",
         "fields": [
           {
-            "name": "totalGifs",
+            "name": "totalWishes",
             "type": "u64"
           },
           {
-            "name": "gifList",
+            "name": "wishList",
             "type": {
               "vec": {
                 "defined": "ItemStruct"
@@ -74,7 +74,7 @@
         "kind": "struct",
         "fields": [
           {
-            "name": "gifLink",
+            "name": "wish",
             "type": "string"
           },
           {
